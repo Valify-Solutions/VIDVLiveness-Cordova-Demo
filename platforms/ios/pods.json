@@ -1,0 +1,16 @@
+{
+    "declarations": {
+        "use_frameworks!": {
+            "declaration": "use_frameworks!",
+            "count": 1
+        }
+    },
+    "sources": {},
+    "libraries": {
+        "VIDVLiveness": {
+            "name": "VIDVLiveness",
+            "spec": "=2.2.0",
+            "count": 1
+        }
+    }
+}

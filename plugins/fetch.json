@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-vidvliveness": {
+    "source": {
+      "type": "registry",
+      "id": "@valifysolutions/cordova-plugin-vidvliveness@1.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

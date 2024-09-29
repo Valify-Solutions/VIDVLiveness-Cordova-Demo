@@ -1,0 +1,39 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"VIDVLivenessPlugin\"><param name=\"ios-package\" value=\"VIDVLivenessPlugin\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-vidvliveness": {
+      "PACKAGE_NAME": "com.valify.LivenessCordovaSampleApp"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-vidvliveness.VIDVLivenessPlugin",
+      "file": "plugins/cordova-plugin-vidvliveness/www/VIDVLivenessPlugin.js",
+      "pluginId": "cordova-plugin-vidvliveness",
+      "clobbers": [
+        "VIDVLivenessPlugin"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-vidvliveness": "1.0.1"
+  }
+}
