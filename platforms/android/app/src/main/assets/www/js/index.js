@@ -1,6 +1,6 @@
-const token = "rtMuIhjslZwZUqkT3qOopO80BML4BO";
-const baseUrl = "https://www.valifystage.com/";
-const bundleKey = "ee3a3dfa43734ac1b416c5729d3f3aef";
+const token = "";
+const baseUrl = "";
+const bundleKey = "";
 const language = "en";
 const primaryColor = "#000000"; // Assuming a primary color
 
