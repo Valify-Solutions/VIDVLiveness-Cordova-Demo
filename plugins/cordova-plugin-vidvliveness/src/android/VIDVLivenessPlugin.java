@@ -45,8 +45,7 @@ public class VIDVLivenessPlugin extends CordovaPlugin {
             intent.putExtra("enable_look_right", jsonObject.getBoolean("enable_look_right"));
         if (jsonObject.has("enable_close_eyes"))
             intent.putExtra("enable_close_eyes", jsonObject.getBoolean("enable_close_eyes"));
-        if (jsonObject.has("liveness_number_of_failed_trials"))
-            intent.putExtra("liveness_number_of_failed_trials", jsonObject.getInt("liveness_number_of_failed_trials"));
+
         if (jsonObject.has("liveness_number_of_instructions"))
             intent.putExtra("liveness_number_of_instructions", jsonObject.getInt("liveness_number_of_instructions"));
         if (jsonObject.has("liveness_time_per_action"))

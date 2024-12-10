@@ -1,5 +1,5 @@
-const token = "";
-const baseUrl = "";
+const token = "dhkAMHyz0gqBnxiKAAVddxSttuVdES";
+const baseUrl = "https://www.valifystage.com";
 const bundleKey = "";
 const language = "en";
 const primaryColor = "#000000"; // Assuming a primary color
@@ -37,10 +37,6 @@ if (testLiveness){
             switch (state) {
                 case "SUCCESS":
                     console.log("Liveness was successful.");
-                    // Add more logic here as necessary
-                    break;
-                case "CAPTURED_IMAGES":
-                    console.log("Live captured images (one per time)");
                     // Add more logic here as necessary
                     break;
             }

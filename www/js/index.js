@@ -1,29 +1,66 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+const token = "dhkAMHyz0gqBnxiKAAVddxSttuVdES";
+const baseUrl = "https://www.valifystage.com";
+const bundleKey = "";
+const language = "en";
+const primaryColor = "#000000"; // Assuming a primary color
 
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+const testLiveness = true;
 
-function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+// Liveness specific parameters
+const livenessParams = {
+access_token: token,
+base_url: baseUrl,
+bundle_key: bundleKey,
+language: language,
+primary_color: primaryColor,
+enable_smile: true,
+enable_look_left: true,
+enable_look_right: true,
+enable_close_eyes: true,
+livenss_number_of_failed_trials: "3",
+livness_number_of_instructions: "4",
+liveness_time_per_action: "10",
+enable_voiceover: true,
+show_error_message: true,
+enable_logging: true
+};
+// Start process function refactored to only initialize relevant SDK based on condition
+function startProcess() {
+if (testLiveness){
+        console.log("Starting Liveness Check");
+        window.VIDVLivenessPlugin.startLiveness(livenessParams, null, null, function(result) {
+            const s = result.toString();
+            const jsonResult = JSON.parse(s);
+            console.log("Liveness Success:", jsonResult);
+            const state = jsonResult.nameValuePairs.state;
+            switch (state) {
+                case "SUCCESS":
+                    console.log("Liveness was successful.");
+                    // Add more logic here as necessary
+                    break;
+            }
+        }, function(error) {
+            const s = error.toString();
+            const jsonResult = JSON.parse(s);
+            console.error("Liveness Error:", jsonResult);
+            const state = jsonResult.nameValuePairs.state;
+            switch (state) {
+                case "ERROR":
+                    console.log("A Builder Error");
+                    // Add more logic here as necessary
+                    break;
+                case "FAILURE":
+                    console.log("A Service Failure");
+                    // Add more logic here as necessary
+                    break;
+                case "EXIT":
+                    console.log("Process was exited by the user.");
+                    // Add more logic here as necessary
+                    break;
+            }
+        });
+    }
 }
+
+document.getElementById("button").addEventListener("click", startProcess);

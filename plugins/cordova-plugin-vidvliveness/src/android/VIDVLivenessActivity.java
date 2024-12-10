@@ -182,16 +182,6 @@ public class VIDVLivenessActivity extends Activity {
                 }else if (livenessResponse instanceof CapturedActions){
 
                     capturedImages.add(((CapturedActions) livenessResponse).detectedFace);
-                    JSONObject jsonObject = new JSONObject();
-                    try {
-                        jsonObject.put("state", "CAPTURED_IMAGES");
-                        jsonObject.put("capturedImage", ((CapturedActions) livenessResponse).detectedFace);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                    String jsonInString = new Gson().toJson(jsonObject);
-
                 }
             }
 

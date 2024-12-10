@@ -13,7 +13,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@valifysolutions/cordova-plugin-vidvliveness": "^1.0.1",
+    "@valifysolutions/cordova-plugin-vidvliveness": "^3.0.3",
     "cordova-android": "^13.0.0",
     "cordova-ios": "^7.1.1"
   },
